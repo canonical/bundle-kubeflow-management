@@ -14,7 +14,7 @@ To refresh the credentials for repos, do:
 
 (charmstore)
 ```
-charm login && cat .go-cookies
+charm login && cat ~/.go-cookies
 ```
 (charmcraft)
 ```
