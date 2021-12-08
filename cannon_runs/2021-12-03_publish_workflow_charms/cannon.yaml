@@ -1,8 +1,0 @@
-repos:
-  - name: ca-scribner/github-actions-recipes
-actions:
-  - type: shellCommand
-    run: find . -name metadata.yaml -exec sed -i '/display-name/d' {} \;
-  - type: createOrReplaceFile
-    srcPath: publish.yaml
-    dstPath: .github/workflows/publish.yaml
