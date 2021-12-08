@@ -2,20 +2,17 @@ repos:
   - name: canonical/argo-operators
   - name: canonical/kfp-operators
   - name: canonical/notebook-operators
-  - name: canonical/istio-operators
-  - name: canonical/bundle-cert-manager
   - name: canonical/mlflow-operator
   - name: canonical/kubeflow-tensorboards-operator
 actions:
   # Remove deprecated metadata.yaml fields
+  # This shouldn't be needed, but in case we missed any before
   - type: shellCommand
     run: find . -name metadata.yaml -exec yq -i eval 'del(.display-name)' {} \;
   - type: shellCommand
     run: find . -name metadata.yaml -exec yq -i eval 'del(.maintainers)' {} \;
   - type: shellCommand
     run: find . -name metadata.yaml -exec yq -i eval 'del(.tags)' {} \;
-  - type: shellCommand
-    run: find . -name metadata.yaml -exec yq -i eval 'del(.series)' {} \;
   - type: shellCommand
     run: find . -name metadata.yaml -exec yq -i eval 'del(.auto-fetch)' {} \;
   - type: shellCommand

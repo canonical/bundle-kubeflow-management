@@ -1,5 +1,7 @@
 set -ex
 
+# Publishes a bundle to the latest/edge branch in charmhub using charmcraft
+
 BUNDLE_NAME=$(yq e '.name' bundle.yaml)
 echo Found BUNDLE_NAME=$BUNDLE_NAME
 
