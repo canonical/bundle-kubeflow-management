@@ -5,28 +5,6 @@ repos:
   - name: canonical/mlflow-operator
   - name: canonical/kubeflow-tensorboards-operator
 actions:
-  # Remove deprecated metadata.yaml fields
-  # This shouldn't be needed, but in case we missed any before
-  - type: shellCommand
-    run: find . -name metadata.yaml -exec yq -i eval 'del(.display-name)' {} \;
-  - type: shellCommand
-    run: find . -name metadata.yaml -exec yq -i eval 'del(.maintainers)' {} \;
-  - type: shellCommand
-    run: find . -name metadata.yaml -exec yq -i eval 'del(.tags)' {} \;
-  - type: shellCommand
-    run: find . -name metadata.yaml -exec yq -i eval 'del(.auto-fetch)' {} \;
-  - type: shellCommand
-    run: find . -name metadata.yaml -exec yq -i eval 'del(.min-juju-version)' {} \;
-  - type: shellCommand
-    run: find . -name metadata.yaml -exec yq -i eval 'del(.deployment)' {} \;
-  - type: shellCommand
-    run: find . -name metadata.yaml -exec yq -i eval 'del(.requires.type)' {} \;
-  - type: shellCommand
-    run: find . -name metadata.yaml -exec yq -i eval 'del(.requires.service)' {} \;
-  - type: shellCommand
-    run: find . -name metadata.yaml -exec yq -i eval 'del(.resources.type)' {} \;
-  - type: shellCommand
-    run: find . -name metadata.yaml -exec yq -i eval 'del(.resources.service)' {} \;
   # Update CI
   - type: createOrReplaceFile
     srcPath: publish.yaml
