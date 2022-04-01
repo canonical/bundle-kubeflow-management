@@ -66,10 +66,11 @@ body:
         Please copy and paste any relevant log output. This will be automatically formatted into code, so no need for backticks.
         Fetch the logs using `juju debug-log --replay` and `kubectl logs ...`. Additional details available in the juju docs 
         at https://juju.is/docs/olm/juju-logs.
-        Tip: Wrap logs in <details> as shown below so they collapse and make the issue more reader friendly
+        Tip: Wrap logs in <details> as shown below so they collapse and make the issue more reader friendly.
       value: |
+        #### `juju debug-log --replay -i mycharm`
+
         <details>
-        <summary>`juju debug-log --replay -i mycharm`</summary>
         
         ```
         Paste your logs here, this'll be expandable!  But leave a line of whitespace between the ` ``` ` and the opening/closing `<details>`
@@ -78,8 +79,9 @@ body:
         
         </details>
         
+        #### `kubectl logs my-charm-workload`
         <details>
-        <summary>`kubectl logs my-charm-workload`</summary>
+        
         
         ```
         Paste your logs here, this'll be expandable!  But leave a line of whitespace between the ` ``` ` and the opening/closing `<details>`
