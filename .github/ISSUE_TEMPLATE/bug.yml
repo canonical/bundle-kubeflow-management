@@ -67,7 +67,6 @@ body:
         Fetch the logs using `juju debug-log --replay` and `kubectl logs ...`. Additional details available in the juju docs 
         at https://juju.is/docs/olm/juju-logs.
         Tip: Wrap logs in <details> as shown below so they collapse and make the issue more reader friendly
-      render: shell
       value: |
         <details>
          <summary>`juju debug-log --replay -i mycharm`</summary>
