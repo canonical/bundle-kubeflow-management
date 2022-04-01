@@ -94,8 +94,6 @@ body:
         ```
         using backticks
         ```
-
-        ...
   - type: textarea
     id: additional-context
     attributes:
