@@ -77,6 +77,11 @@ body:
          <summary>`kubectl logs my-charm-workload`</summary>
           Paste your logs here, this'll be expandable!
         </details>
+        
+        Or, render shorter logs as code to make them readable
+        ```
+        using backticks
+        ```
 
         ...
   - type: textarea
