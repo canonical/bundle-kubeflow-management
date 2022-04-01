@@ -1,0 +1,38 @@
+name: Enhancement
+description: File a request for a new enhancement or feature
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: >
+        Thanks for taking the time to fill out this enhancement request!  Please outline
+        the proposal in the boxes below, providing images or other information as needed.
+  - type: textarea
+    id: enhancement-description
+    attributes:
+      label: What would you like added?
+      description: >
+        Provide a clear description of what you propose
+    placeholder: |
+      When this charm is deployed without `--trust`, add a `BlockedStatus` with a message
+      identifying that `--trust` is required and must be enabled for the charm to function.
+    validations:
+      required: true
+  - type: textarea
+    id: enhancement-business-case
+    attributes:
+      label: Why is this enhancement needed?
+      description: >
+        Describe the problem that this solves, perhaps by citing any existing issues this
+        could address.
+      placeholder: |
+        Currently, whenever this charm is deployed without `--trust`, it goes into `Error`
+        and the `debug-log` for the charm does not make it obvious why.  Adding this 
+        feature would make it much easier for users to address this misconfiguration. 
+    validations:
+      required: true
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional context
+      description: Anything else that might help is solve this problem?
