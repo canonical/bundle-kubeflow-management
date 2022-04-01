@@ -69,13 +69,15 @@ body:
         Tip: Wrap logs in <details> as shown below so they collapse and make the issue more reader friendly
       value: |
         <details>
-         <summary>`juju debug-log --replay -i mycharm`</summary>
-          Paste your logs here, this'll be expandable!
+        <summary>`juju debug-log --replay -i mycharm`</summary>
+        Paste your logs here, this'll be expandable!
         </details>
         
         <details>
-         <summary>`kubectl logs my-charm-workload`</summary>
-          Paste your logs here, this'll be expandable!
+        <summary>`kubectl logs my-charm-workload`</summary>
+        ```console
+        Paste your logs here, this'll be expandable!
+        ```console
         </details>
         
         Or, render shorter logs as code to make them readable
