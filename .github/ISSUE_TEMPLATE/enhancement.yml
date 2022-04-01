@@ -13,9 +13,9 @@ body:
       label: What would you like added?
       description: >
         Provide a clear description of what you propose
-    placeholder: |
-      When this charm is deployed without `--trust`, add a `BlockedStatus` with a message
-      identifying that `--trust` is required and must be enabled for the charm to function.
+      placeholder: |
+        When this charm is deployed without `--trust`, add a `BlockedStatus` with a message
+        identifying that `--trust` is required and must be enabled for the charm to function.
     validations:
       required: true
   - type: textarea
