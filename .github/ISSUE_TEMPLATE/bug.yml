@@ -70,17 +70,25 @@ body:
       value: |
         <details>
         <summary>`juju debug-log --replay -i mycharm`</summary>
-        Paste your logs here, this'll be expandable!
+        
+        ```
+        Paste your logs here, this'll be expandable!  But leave a line of whitespace between the ` ``` ` and the opening/closing `<details>`
+        The backticks format this like code, probably making it more readable
+        ```
+        
         </details>
         
         <details>
         <summary>`kubectl logs my-charm-workload`</summary>
-        ```console
-        Paste your logs here, this'll be expandable!
-        ```console
-        </details>
         
-        Or, render shorter logs as code to make them readable
+        ```
+        Paste your logs here, this'll be expandable!  But leave a line of whitespace between the ` ``` ` and the opening/closing `<details>`
+        The backticks format this like code, probably making it more readable
+        ```
+        
+        </details>
+
+        Or, render shorter logs as code directly
         ```
         using backticks
         ```
