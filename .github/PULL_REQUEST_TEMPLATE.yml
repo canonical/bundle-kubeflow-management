@@ -60,7 +60,7 @@ Example:
 
 (your text here)
 
-### PR checklists
+### PR checklist
 <!--
 Before opening for review, ensure the below items have been completed
 
@@ -73,7 +73,7 @@ This checklist is for everyone, please do the following
 * [ ] `README.md` been updated to reflect all user-facing changes?
 * [ ] Is everything required for easy testing been provided?
 * [ ] For any temporary patches applied by this, do they clearly state when they can be removed in a comment and link a GitHub issue for full details?  For example, if pinning a package to an older version due to a bug, is there a comment stating "Can be removed when #X is closed" where X is an issue on the repo giving full details.
-* [ ] Have all changes that require future maintenance been noted in the [Developing](CONTRIBUTING.md#developing) section of [`CONTRIBUTING.md`](CONTRIBUTING.md)
+* [ ] Have all changes that require future maintenance been noted in the Developing section of `CONTRIBUTING.md`?
 * [ ] For any charm that deploys an object that it explicitly names, is that named hard-coded and will it cause conflict if the same charm is deployed twice?  For example, if the Minio charm creates a secret called `minio-secret`, rather than something like `minio-secret-{application_name}`
 * [ ] PR includes unit tests for all new code
 * [ ] PR includes integration tests for all new features, where appropriate
