@@ -2,7 +2,7 @@
 the checklist to ensure we can merge this code quickly.
 
 When opening your draft PR, you may not have everything filled out - for example, 
-you might develop your test insturctions in parallel to building your
+you might develop your test instructions in parallel to building your
 PR.  That is ok!  But before moving the PR out of draft, please ensure everything
 is prepared. 
 
@@ -17,46 +17,65 @@ How should it work?
 Example:
   Implemented here is a check to see if, during install, we have the required kubernetes
   permissions to properly deploy the charm.  If we do not, we raise a `BlockedStatus` with
-  a clear message.
+  a clear message describing how to resolve the error.
 -->
 
 ### Instructions for testing
 <!--
-Provide a clear, step by step instruction of how to test this feature.  Provide
-screenshots, scripts, or other instructions as needed.  Even though you have
-unit and integration tests (you have tests, right?), explain here how a human can test
-your code.
+Even though you also have unit and integration tests (you have tests, right?), please also
+provide a clear, step by step instruction of how a human can test this feature.  Include
+screenshots, scripts, or other instructions as needed.
 
 Example:
-  To test normal operation:
+  To demonstrate the error before this PR:
+  1. `juju deploy myCharm`
+  2. (wait for deployment to occur - the charm will hit Error and `juju debug-log` will 
+     show `403 Forbidden` errors.
+
+  To demonstrate how the charm should be used:
   1. `juju deploy myCharm --trust`
   2. (wait for deployment to occur - the charm should progress to `Active`)
 
-  To test the error catch added in this PR:
-  1. `juju deploy myCharm` (omitting `--trust`)
+  To test the new error catch added in this PR:
+  1. `juju deploy ./this-local.charm --resource ...` (omitting `--trust`)
   2. (wait for deployment to occur - the charm should progress to 
      `BlockedStatus("Charm missing required permissions - did you deploy with --trust?"))
 -->
 
 ### Referenced issues
 <!--
-Reference any issues this might be related to (these could also be mentioned in the 
+Reference any issues related to this PR (these could also be mentioned in the 
 descriptions above).  If this PR will fully address an open issue, use a 
 [github keyword](https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting/using-keywords-in-issues-and-pull-requests)
-to ensure when this PR closes, the issue is closed. 
+to automatically close that issue when this PR closes. 
 
 Example:
   This PR closes #XXXX  <--invokes a github keyword that will close XXXX when this PR closes
   #YYYY was considered here <-- just a comment for readers, but does not close YYYY like above
 -->
 
-### PR checklist
+### PR checklists
 <!--
 Before opening for review, ensure the below items have been completed
 
 If you open this PR first as a draft, it is not expected that you have completed all items until you
 remove draft status
 -->
+<!--
+This checklist is for everyone, please do the following
+-->
+* [ ] `README.md` been updated to reflect all user-facing changes?
+* [ ] Is everything required for easy testing been provided?
+* [ ] For any temporary patches applied by this, do they clearly state when they can be removed in a comment and link a GitHub issue for full details?  For example, if pinning a package to an older version due to a bug, is there a comment stating "Can be removed when #X is closed" where X is an issue on the repo giving full details.
+* [ ] Have all changes that require future maintenance been noted in the [Developing](CONTRIBUTING.md#developing) section of [`CONTRIBUTING.md`](CONTRIBUTING.md)
+* [ ] For any charm that deploys an object that it explicitly names, is that named hard-coded and will it cause conflict if the same charm is deployed twice?  For example, if the Minio charm creates a secret called `minio-secret`, rather than something like `minio-secret-{application_name}`
+* [ ] PR includes unit tests for all new code
+* [ ] PR includes integration tests for all new features, where appropriate
+* [ ] If this PR is fixing a bug, has an automated test been added that would catch the reoccurrance of this bug?
 
-* [ ] PR includes unit tests on all new code
-* [ ] MOAR ITEMS COMING!!!
+<!--
+This checklist is for PRs from within our team.  If you're outside of our team, you can delete these
+-->
+* [ ] Can this PR be broken up into smaller, easier to review PRs?  For example, if this PR refactors the existing code plus implents a new feature, can they be decoupled and opened as two separate PRs?
+* [ ] If addressing a JIRA ticket, is the source branch for this PR named `KF-XYZ-my-pr-name` so it shows up automatically in JIRA?
+* [ ] Does this charm currently satisfy our team style guide (does it use up to date tox/lint configurations, code coverage, CI patterns, etc.)?  If not, has an issue been opened against the repo outlining what is out of date?
