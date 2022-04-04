@@ -20,6 +20,8 @@ Example:
   a clear message describing how to resolve the error.
 -->
 
+(your text here)
+
 ### Instructions for testing
 <!--
 Even though you also have unit and integration tests (you have tests, right?), please also
@@ -42,6 +44,8 @@ Example:
      `BlockedStatus("Charm missing required permissions - did you deploy with --trust?"))
 -->
 
+(your text here)
+
 ### Referenced issues
 <!--
 Reference any issues related to this PR (these could also be mentioned in the 
@@ -53,6 +57,8 @@ Example:
   This PR closes #XXXX  <--invokes a github keyword that will close XXXX when this PR closes
   #YYYY was considered here <-- just a comment for readers, but does not close YYYY like above
 -->
+
+(your text here)
 
 ### PR checklists
 <!--
